@@ -40,7 +40,7 @@ function init(){
     // パーティクル
     const num = 1000; // パーティクルの数
     const range = 1000; // 配置する範囲
-    //const rangeHalf = range / 2;
+    const rangeHalf = range / 2;
 
     const material = new THREE.SpriteMaterial({color: 0xffffff});
     for ( let i = 0; i < num; i ++ ) {
