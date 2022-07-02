@@ -9,10 +9,10 @@ function init(){
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(width, height);
+    renderer.setClearColor(0xf5f5f5, 1);
 
     // シーンを作成
     const scene = new THREE.Scene();
-
 
     // 平行光源を作成
     // new THREE.DirectionalLight(色, 光の強さ)
