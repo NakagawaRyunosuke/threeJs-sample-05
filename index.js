@@ -27,7 +27,7 @@ function init(){
 
     //床
     const groundGeometry = new THREE.PlaneGeometry(100,100,64,64);
-    const snow = new THREE.TextureLoader().load("img/snow.jpg");
+    const snow = new THREE.TextureLoader.load("img/snowFreak.png");
     const groundMaterial = new THREE.MeshLambertMaterial({map:snow});
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
     ground.rotation.x = Math.PI / -2;
