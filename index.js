@@ -14,6 +14,11 @@ function init(){
     const scene = new THREE.Scene();
     scene.fog = new THREE.Fog( 0xeeeeee, 0, 100 );
 
+    // 平行光源を作成
+    // new THREE.DirectionalLight(色, 光の強さ)
+    const light = new THREE.DirectionalLight(0xFFFFFF, 1);
+    scene.add(light);
+
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
     camera.position.set(0, 0, 3);
@@ -28,12 +33,7 @@ function init(){
     ground.rotation.x = Math.PI / -2;
     ground.position.set(0,0,0);
     scene.add(ground);
-
-    const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    const material = new THREE.MeshBasicMaterial( {color: 0x00ff00} );
-    const cube = new THREE.Mesh( geometry, material );
-    scene.add( cube );
-
+    
     tick();
 
     function tick(){
