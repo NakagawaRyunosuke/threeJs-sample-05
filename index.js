@@ -34,6 +34,13 @@ function init(){
     ground.position.set(0,0,0);
     scene.add(ground);
 
+    //テクスチャ
+    const texture = new THREE.TextureLoader().load( "img/snowFreak.png" );
+    const material = new THREE.SpriteMaterial({
+        map: texture,
+        color: 0xffffff,
+    });
+
     // グループ
     const group = new THREE.Group();
     scene.add( group );
@@ -42,7 +49,6 @@ function init(){
     const range = 100; // 配置する範囲
     const rangeHalf = range / 2;
 
-    const material = new THREE.SpriteMaterial({color: 0xffffff});
     for ( let i = 0; i < num; i ++ ) {
         const sprite = new THREE.Sprite( material ); //常に正面を向く3Dオブジェクト
         sprite.position.x = range * (Math.random() - 0.5);
