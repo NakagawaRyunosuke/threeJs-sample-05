@@ -18,15 +18,16 @@ function init(){
     const camera = new THREE.PerspectiveCamera(45, width / height);
     camera.position.set(0, 0, 100);
     // カメラコントローラーを作成
-    const controls = new THREE.OrbitControls(camera, document.body);
+    const controls = new THREE.OrbitControls(camera, document.getElementById("canvas"));
 
-    // //床
-    // const groundGeometry = new THREE.PlaneGeometry(150,150,64,64);
-    // const snow = new THREE.TextureLoader().load("img/snow.jpg");
-    // const groundMaterial = new THREE.MeshLambertMaterial({map:snow});
-    // const ground = new THREE.Mesh(groundGeometry, groundMaterial);
-    // ground.rotation.x = Math.PI / -2;
-    // scene.add(ground);
+    //床
+    const groundGeometry = new THREE.PlaneGeometry(10,10,64,64);
+    const snow = new THREE.TextureLoader().load("img/snow.jpg");
+    const groundMaterial = new THREE.MeshLambertMaterial({map:snow});
+    const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+    ground.rotation.x = Math.PI / -2;
+    ground.position.set(0,0,0);
+    scene.add(ground);
 
 
     tick();
