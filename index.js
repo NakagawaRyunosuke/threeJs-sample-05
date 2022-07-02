@@ -27,7 +27,7 @@ function init(){
 
     //床
     const groundGeometry = new THREE.PlaneGeometry(100,100,64,64);
-    const snow = new THREE.TextureLoader().load("img/snow.jpg");
+    const snow = new THREE.ImageUtils.loadTexture("img/snow.jpg");
     const groundMaterial = new THREE.MeshLambertMaterial({map:snow});
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
     ground.rotation.x = Math.PI / -2;
@@ -35,7 +35,7 @@ function init(){
     scene.add(ground);
 
     //テクスチャ
-    const texture = new THREE.TextureLoader().load( "img/snowFreak.png" );
+    const texture = new THREE.ImageUtils.loadTexture("img/snowFreak.png");
     const material = new THREE.SpriteMaterial({
         map: texture,
         color: 0xffffff,
