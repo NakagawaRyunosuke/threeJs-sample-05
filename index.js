@@ -31,7 +31,7 @@ function init(){
     const groundMaterial = new THREE.MeshLambertMaterial({map:snow});
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
     ground.rotation.x = Math.PI / -2;
-    ground.position.set(0,-3,0);
+    ground.position.set(0,-5,0);
     scene.add(ground);
 
     tick();
