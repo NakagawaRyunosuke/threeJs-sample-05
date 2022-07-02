@@ -12,7 +12,7 @@ function init(){
 
     // シーンを作成
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog( 0xeeeeee, 0, 100 );
+    scene.fog = new THREE.Fog( 0xeeeeee, 5, 100 );
 
     // 平行光源を作成
     // new THREE.DirectionalLight(色, 光の強さ)
@@ -21,7 +21,7 @@ function init(){
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
-    camera.position.set(0, 5, 5);
+    camera.position.set(0, 10, 5);
     // カメラコントローラーを作成
     const controls = new THREE.OrbitControls(camera, document.getElementById("canvas"));
 
