@@ -92,6 +92,7 @@ function init(){
             obj.matrixAutoUpdate = false;
             obj.updateMatrix();
         }
+        
 
     }
 
