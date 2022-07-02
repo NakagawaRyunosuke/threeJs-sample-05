@@ -45,7 +45,7 @@ function init(){
     const group = new THREE.Group();
     scene.add( group );
     // パーティクル
-    const num = 1000; // パーティクルの数
+    const num = 100; // パーティクルの数
     const range = 100; // 配置する範囲
     const rangeHalf = range / 2;
 
@@ -54,7 +54,7 @@ function init(){
         sprite.position.x = range * (Math.random() - 0.5);
         sprite.position.y = range * (Math.random() - 0.5);
         sprite.position.z = range * (Math.random() - 0.5);
-        sprite.scale.x = sprite.scale.y = sprite.scale.z = Math.random() + 5;
+        sprite.scale.x = sprite.scale.y = sprite.scale.z = Math.random() * 10 + 5;
         sprite.matrixAutoUpdate = false;
         sprite.updateMatrix();
         group.add( sprite );
