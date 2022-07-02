@@ -12,7 +12,7 @@ function init(){
 
     // シーンを作成
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog( 0xEEEEEE, 0, 100 );
+    //scene.fog = new THREE.Fog( 0xEEEEEE, 0, 100 );
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
