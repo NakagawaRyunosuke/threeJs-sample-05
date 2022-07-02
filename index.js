@@ -26,7 +26,7 @@ function init(){
     const controls = new THREE.OrbitControls(camera, document.getElementById("canvas"));
 
     //床
-    const groundGeometry = new THREE.PlaneGeometry(1000,1000,64,64);
+    const groundGeometry = new THREE.PlaneGeometry(100,100,64,64);
     const snow = new THREE.TextureLoader().load("img/snow.jpg");
     const groundMaterial = new THREE.MeshLambertMaterial({map:snow});
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
@@ -39,7 +39,7 @@ function init(){
     scene.add( group );
     // パーティクル
     const num = 1000; // パーティクルの数
-    const range = 1000; // 配置する範囲
+    const range = 100; // 配置する範囲
     const rangeHalf = range / 2;
 
     const material = new THREE.SpriteMaterial({color: 0xffffff});
