@@ -12,7 +12,7 @@ function init(){
 
     // シーンを作成
     const scene = new THREE.Scene();
-    scene.background = new THREE.Color( 0xeeeeee );
+    scene.background = new THREE.Color( 0xf5f5f5 );
 
 
     // 平行光源を作成
