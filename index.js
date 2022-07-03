@@ -223,6 +223,9 @@ function init(){
     
         snowmanGroup.rotation.y += 0.01;
         snowmanHeadGroup.rotation.y += 0.01;
+        if(Math.floor(snowmanGroup.rotation.y) == 0){
+            console.log(snowmanGroup.rotation.y);
+        }
         requestAnimationFrame(tick);
     }
 }
