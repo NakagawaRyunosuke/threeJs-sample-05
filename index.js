@@ -13,7 +13,7 @@ function init(){
 
     // シーンを作成
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog(0xf5f5f5, 50, 1000);
+    scene.fog = new THREE.Fog(0xf5f5f5, 100, 1000);
 
     // 平行光源を作成
     // new THREE.DirectionalLight(色, 光の強さ)
@@ -51,30 +51,30 @@ function init(){
 
 
     //雪だるま下半身
-    const BGeometry = new THREE.SphereGeometry( 10, 32, 32 );
+    const BGeometry = new THREE.SphereGeometry( 20, 32, 32 );
     const BMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
     const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
-    snowman_B.position.set(0,10,0);
+    snowman_B.position.set(-30,20,0);
     snowmanGroup.add( snowman_B );
 
     //雪だるま上半身
-    const TGeometry = new THREE.SphereGeometry( 1, 32, 32 );
-    const TMaterial = new THREE.MeshLambertMaterial({color:0xffffff, map:snow});
-    const snowman_T = new THREE.Mesh( TGeometry, TMaterial);
-    snowman_T.position.set(0,15,0);
+    const TGeometry = new THREE.SphereGeometry( 15, 32, 32 );
+    const TMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
+    const snowman_T = new THREE.Mesh( TGeometry, TMaterial );
+    snowman_T.position.set(-30,50,0);
     snowmanGroup.add( snowman_T );
 
     //街灯
-    const lightGeometry = new THREE.CylinderGeometry( 4, 4, 100, 64 );
+    const lightGeometry = new THREE.CylinderGeometry( 4, 4, 200, 64 );
     const lightMaterial = new THREE.MeshBasicMaterial( {color: 0x000000} );
     const lightPool = new THREE.Mesh( lightGeometry, lightMaterial );
-    lightPool.position.set(10,100,10);
+    lightPool.position.set(0,100,-50);
     scene.add( lightPool );
 
-    const headGeometry = new THREE.BoxGeometry(2,1,3);
+    const headGeometry = new THREE.BoxGeometry(20,10,30);
     const headMaterial = new THREE.MeshBasicMaterial({color:0x000000});
     const lightHead = new THREE.Mesh(headGeometry, headMaterial);
-    lightHead.position.set(10,50,10);
+    lightHead.position.set(0,200,-40);
     scene.add(lightHead);
 
     // パーティクル
