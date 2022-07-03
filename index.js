@@ -64,8 +64,8 @@ function init(){
     const group = new THREE.Group();
     scene.add( group );
 
-    const snowmanHeadGroup = new THREE.Group();
-    scene.add(snowmanHeadGroup);
+    const snowmanGroup = new THREE.Group();
+    scene.add(snowmanGroup);
 
     const benchGroup = new THREE.Group();
     scene.add(benchGroup);
@@ -205,9 +205,9 @@ function init(){
 
     let mode = true;
     const checkMode = () => {
-        if(Math.floor(snowmanHeadGroup.rotation.y) > 0.001){
+        if(Math.floor(snowmanGroup.rotation.y) > 0.1){
             return false;
-        }else if(Math.floor(snowmanHeadGroup.rotation.y) < -0.01){
+        }else if(Math.floor(snowmanGroup.rotation.y) < -0.1){
             return true;
         }else{
             return mode;
@@ -216,9 +216,11 @@ function init(){
 
     const moveSnowman = (mode) => {
         if(mode){
-            snowmanHeadGroup.rotation.y += 0.01;
+            snowmanGroup.rotation.y += 0.01;
+            snowmanGroup.position.x += 0.01;
         }else{
-            snowmanHeadGroup.rotation.y -= 0.01;
+            snowmanGroup.rotation.y -= 0.01;
+            snowmanGroup.position.x -= 0.01;
         }
     }
 
