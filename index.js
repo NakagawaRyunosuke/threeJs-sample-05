@@ -242,6 +242,7 @@ function init(){
         mode = modeCheck(mode);
         snowmanHeadMove(mode);
         snowmanGroup.rotation.y += 0.01;
+        snowmanHeadGroup.rotation.y += 0.01;
         requestAnimationFrame(tick);
     }
 }
