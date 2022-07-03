@@ -15,20 +15,20 @@ function init(){
     const scene = new THREE.Scene();
     scene.fog = new THREE.Fog(0x000000, 100, 1000);
 
-    // 平行光源を作成
-    // new THREE.DirectionalLight(色, 光の強さ)
-    const light = new THREE.DirectionalLight(0xFFFFFF, 1);
-    light.castShadow = true;
-    scene.add(light);
+    // // 平行光源を作成
+    // // new THREE.DirectionalLight(色, 光の強さ)
+    // const light = new THREE.DirectionalLight(0xFFFFFF, 1);
+    // light.castShadow = true;
+    // scene.add(light);
 
-    // //スポットライト
-    // const spotLight = new THREE.SpotLight(0xFFD700, 0.1, 250, Math.PI * 0.8, 0.25, 1);
-    // spotLight.castShadow = true;
-    // spotLight.position.set(30, 200, -30);
-    // scene.add(spotLight);
+    //スポットライト
+    const spotLight = new THREE.SpotLight(0xffffff, 10, 250, Math.PI * 0.8, 0.25, 1);
+    spotLight.castShadow = true;
+    spotLight.position.set(30, 200, -30);
+    scene.add(spotLight);
 
-    // const spotlightHelper = new THREE.SpotLightHelper(spotLight);
-    // scene.add(spotlightHelper);
+    const spotlightHelper = new THREE.SpotLightHelper(spotLight);
+    scene.add(spotlightHelper);
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
