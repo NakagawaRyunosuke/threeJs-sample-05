@@ -205,9 +205,9 @@ function init(){
 
     let mode = true;
     const checkMode = () => {
-        if(Math.floor(snowmanHeadGroup.rotation.x) > 0.5){
+        if(Math.floor(snowmanHeadGroup.rotation.x) > 0.2){
             return false;
-        }else if(Math.floor(snowmanHeadGroup.rotation.x < -0.5)){
+        }else if(Math.floor(snowmanHeadGroup.rotation.x < 0)){
             return true;
         }else{
             return mode;
