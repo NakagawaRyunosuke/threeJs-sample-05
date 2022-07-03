@@ -205,9 +205,9 @@ function init(){
 
     let mode = true;
     const checkMode = () => {
-        if(Math.floor(snowmanHeadGroup.rotation.y) > 0.01){
+        if(Math.floor(snowmanHeadGroup.rotation.y) > 0.001){
             return false;
-        }else if(Math.floor(snowmanHeadGroup.rotation.y) < 0){
+        }else if(Math.floor(snowmanHeadGroup.rotation.y) < -0.001){
             return true;
         }else{
             return mode;
@@ -216,9 +216,9 @@ function init(){
 
     const moveSnowman = (mode) => {
         if(mode){
-            snowmanHeadGroup.rotation.y += 0.001;
+            snowmanHeadGroup.rotation.y += 0.05;
         }else{
-            snowmanHeadGroup.rotation.y -= 0.001;
+            snowmanHeadGroup.rotation.y -= 0.05;
         }
     }
 
