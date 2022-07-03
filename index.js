@@ -118,7 +118,7 @@ function init(){
     // scene.add(snowman_T);
 
     //街灯
-    const lightGeometry = new THREE.CylinderGeometry( 5, 5, 20, 32 );
+    const lightGeometry = new THREE.CylinderGeometry( 5, 5, 20, 64 );
     const lightMaterial = new THREE.MeshBasicMaterial( {color: 0x000000} );
     const lightPool = new THREE.Mesh( lightGeometry, lightMaterial );
     lightPool.position.set(5,0,1);
