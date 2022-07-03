@@ -45,6 +45,10 @@ function init(){
     // グループ
     const group = new THREE.Group();
     scene.add( group );
+
+    const snowmanGroup = new THREE.Group();
+    scene.add(snowmanGroup);
+
     // パーティクル
     const num = 5000; // パーティクルの数
     const range = 1000; // 配置する範囲
@@ -104,13 +108,13 @@ function init(){
     const BMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
     const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
     snowman_B.position.set(0,100,0);
-    scene.add( snowman_B );
+    snowmanGroup.add( snowman_B );
 
     const TGeometry = new THREE.SphereGeometry( 50, 32, 32 );
     const TMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
     const snowman_T = new THREE.Mesh( TGeometry, TMaterial );
     snowman_T.position.set(0,150,0);
-    scene.add(snowman_T);
+    snowmanGroup.add(snowman_T);
 
     tick();
 
