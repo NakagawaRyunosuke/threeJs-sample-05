@@ -15,20 +15,20 @@ function init(){
     const scene = new THREE.Scene();
     scene.fog = new THREE.Fog(0x000000, 100, 1000);
 
-    // // 平行光源を作成
-    // // new THREE.DirectionalLight(色, 光の強さ)
-    // const light = new THREE.DirectionalLight(0xFFFFFF, 1);
-    // light.castShadow = true;
-    // scene.add(light);
+    // 平行光源を作成
+    // new THREE.DirectionalLight(色, 光の強さ)
+    const light = new THREE.DirectionalLight(0xFFFFFF, 1);
+    light.castShadow = true;
+    scene.add(light);
 
-    //スポットライト
-    const spotLight = new THREE.SpotLight(0xFFD700, 0.1, 250, Math.PI * 0.8, 0.25, 1);
-    spotLight.castShadow = true;
-    spotLight.position.set(30, 200, -30);
-    scene.add(spotLight);
+    // //スポットライト
+    // const spotLight = new THREE.SpotLight(0xFFD700, 0.1, 250, Math.PI * 0.8, 0.25, 1);
+    // spotLight.castShadow = true;
+    // spotLight.position.set(30, 200, -30);
+    // scene.add(spotLight);
 
-    const spotlightHelper = new THREE.SpotLightHelper(spotLight);
-    scene.add(spotlightHelper);
+    // const spotlightHelper = new THREE.SpotLightHelper(spotLight);
+    // scene.add(spotlightHelper);
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
@@ -78,7 +78,7 @@ function init(){
 
     //雪だるま鼻
     const coneGeometry = new THREE.ConeGeometry( 5, 20, 32 );
-    const coneMaterial = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
+    const coneMaterial = new THREE.MeshLambertMaterial( {color: 0xFF0000} );
     const cone = new THREE.Mesh( coneGeometry, coneMaterial );
     cone.position.set(-30,50,10);
     cone.rotation.x = Math.PI/2;
@@ -86,13 +86,13 @@ function init(){
 
     //雪だるま目
     const eyeGeometry1 = new THREE.SphereGeometry(2,32,32);
-    const eyeMaterial1 = new THREE.MeshBasicMaterial({color:0x000000});
+    const eyeMaterial1 = new THREE.MeshLambertMaterial({color:0x000000});
     const rightEye = new THREE.Mesh(eyeGeometry1, eyeMaterial1);
     rightEye.position.set(-35,55,13);
     snowmanGroup.add(rightEye);
 
     const eyeGeometry2 = new THREE.SphereGeometry(2,32,32);
-    const eyeMaterial2 = new THREE.MeshBasicMaterial({color:0x000000});
+    const eyeMaterial2 = new THREE.MeshLambertMaterial({color:0x000000});
     const leftEye = new THREE.Mesh(eyeGeometry2, eyeMaterial2);
     leftEye.position.set(-25,55,13);
     snowmanGroup.add(leftEye);
@@ -118,13 +118,13 @@ function init(){
 
     //街灯
     const lightGeometry = new THREE.CylinderGeometry( 4, 4, 200, 64 );
-    const lightMaterial = new THREE.MeshBasicMaterial( {color: 0x000000} );
+    const lightMaterial = new THREE.MeshLambertMaterial( {color: 0x000000} );
     const lightPool = new THREE.Mesh( lightGeometry, lightMaterial );
     lightPool.position.set(30,100,-50);
     scene.add( lightPool );
 
     const headGeometry = new THREE.BoxGeometry(20,10,30);
-    const headMaterial = new THREE.MeshBasicMaterial({color:0x000000});
+    const headMaterial = new THREE.MeshLambertMaterial({color:0x000000});
     const lightHead = new THREE.Mesh(headGeometry, headMaterial);
     lightHead.position.set(30,200,-40);
     scene.add(lightHead);
