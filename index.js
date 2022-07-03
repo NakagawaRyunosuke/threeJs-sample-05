@@ -17,8 +17,16 @@ function init(){
 
     // 平行光源を作成
     // new THREE.DirectionalLight(色, 光の強さ)
-    const light = new THREE.DirectionalLight(0xFFFFFF, 1);
-    scene.add(light);
+    // const light = new THREE.DirectionalLight(0xFFFFFF, 1);
+    // scene.add(light);
+
+    //スポットライト
+    const spotLight = new THREE.SpotLight(0xFFD700, 0.5, 250, Math.PI * 0.8, 0.25, 1);
+    spotLight.castShadow = true;
+    spotLight.position.set(30, 200, -30);
+
+    const lightHelper = new THREE.SpotLightHelper(spotLight);
+    scene.add(lightHelper);
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
@@ -33,6 +41,7 @@ function init(){
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
     ground.rotation.x = Math.PI / -2;
     ground.position.set(0,0,0);
+    ground.receiveShadow = true;
     scene.add(ground);
 
     //テクスチャ
@@ -63,6 +72,7 @@ function init(){
     const snowman_T = new THREE.Mesh( TGeometry, TMaterial );
     snowman_T.position.set(-30,50,0);
     snowmanGroup.add( snowman_T );
+ 
 
     //雪だるま鼻
     const coneGeometry = new THREE.ConeGeometry( 5, 20, 32 );
@@ -70,20 +80,22 @@ function init(){
     const cone = new THREE.Mesh( coneGeometry, coneMaterial );
     cone.position.set(-30,50,10);
     cone.rotation.x = Math.PI/2;
-    scene.add( cone );
+    snowmanGroup.add( cone );
 
     //雪だるま目
     const eyeGeometry1 = new THREE.SphereGeometry(2,32,32);
     const eyeMaterial1 = new THREE.MeshBasicMaterial({color:0x000000});
     const rightEye = new THREE.Mesh(eyeGeometry1, eyeMaterial1);
     rightEye.position.set(-35,55,13);
-    scene.add(rightEye);
+    snowmanGroup.add(rightEye);
 
     const eyeGeometry2 = new THREE.SphereGeometry(2,32,32);
     const eyeMaterial2 = new THREE.MeshBasicMaterial({color:0x000000});
     const leftEye = new THREE.Mesh(eyeGeometry2, eyeMaterial2);
     leftEye.position.set(-25,55,13);
-    scene.add(leftEye);
+    snowmanGroup.add(leftEye);
+
+    snowmanGroup.castShadow = true;
 
     //ベンチ
     const benchGeometry1 = new THREE.BoxGeometry(100, 10, 30);
@@ -101,10 +113,6 @@ function init(){
     const benchleag2 = new THREE.Mesh(benchGeometry2,benchMaterial2);
     benchleag2.position.set(145,15,0);
     scene.add(benchleag2);
-
-
-    
-
 
     //街灯
     const lightGeometry = new THREE.CylinderGeometry( 4, 4, 200, 64 );
