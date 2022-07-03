@@ -79,15 +79,14 @@ function init(){
     const BMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
     const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
     snowman_B.position.set(-30,20,0);
-    snowman_B.castShadow = true;
-    scene.add(snowman_B);
+    snowmanGroup.add(snowman_B);
 
     //雪だるま上半身
     const TGeometry = new THREE.SphereGeometry( 15, 32, 32 );
     const TMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
     const snowman_T = new THREE.Mesh( TGeometry, TMaterial );
     snowman_T.position.set(-30,50,0);
-    snowmanHeadGroup.add( snowman_T );
+    snowmanGroup.add( snowman_T );
  
 
     //雪だるま鼻
@@ -96,22 +95,22 @@ function init(){
     const cone = new THREE.Mesh( coneGeometry, coneMaterial );
     cone.position.set(-30,50,10);
     cone.rotation.x = Math.PI/2;
-    snowmanHeadGroup.add( cone );
+    snowmanGroup.add( cone );
 
     //雪だるま目
     const eyeGeometry1 = new THREE.SphereGeometry(2,32,32);
     const eyeMaterial1 = new THREE.MeshLambertMaterial({color:0x000000});
     const rightEye = new THREE.Mesh(eyeGeometry1, eyeMaterial1);
     rightEye.position.set(-35,55,13);
-    snowmanHeadGroup.add(rightEye);
+    snowmanGroup.add(rightEye);
 
     const eyeGeometry2 = new THREE.SphereGeometry(2,32,32);
     const eyeMaterial2 = new THREE.MeshLambertMaterial({color:0x000000});
     const leftEye = new THREE.Mesh(eyeGeometry2, eyeMaterial2);
     leftEye.position.set(-25,55,13);
-    snowmanHeadGroup.add(leftEye);
+    snowmanGroup.add(leftEye);
 
-    snowmanHeadGroup.castShadow = true;
+    snowmanGroup.castShadow = true;
 
     //ベンチ
     const benchGeometry1 = new THREE.BoxGeometry(100, 10, 30);
