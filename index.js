@@ -252,7 +252,7 @@ function init(){
         modeX = checkModeX();
         moveSnowmanY(modeY);
         moveSnowmanX(modeX);
-        console.log(snowmanGroup.position.x)
+        console.log(snowmanGroup.position.x);
         requestAnimationFrame(tick);
     }
 }
