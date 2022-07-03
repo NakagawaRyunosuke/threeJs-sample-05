@@ -113,6 +113,7 @@ function init(){
     const TGeometry = new THREE.SphereGeometry( 50, 32, 32 );
     const TMaterial = new THREE.MeshLambertMaterial({color:0xffffff, map:snow});
     const snowman_T = new THREE.Mesh( TGeometry, TMaterial);
+    snowman_T.position.set(0,150,0);
     snowmanGroup.add(snowman_T);
 
     tick();
