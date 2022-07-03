@@ -253,6 +253,7 @@ function init(){
         moveSnowmanY(modeY);
         moveSnowmanX(modeX);
         console.log(snowmanGroup.position.x);
+        console.log(snowmanGroup.rotation.y);
         requestAnimationFrame(tick);
     }
 }
