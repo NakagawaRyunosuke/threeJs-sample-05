@@ -111,7 +111,7 @@ function init(){
     // snowmanGroup.add( snowman_B );
 
     //雪だるま上半身
-    const TGeometry = new THREE.SphereGeometry( 5, 32, 32 );
+    const TGeometry = new THREE.SphereGeometry( 1, 32, 32 );
     const TMaterial = new THREE.MeshLambertMaterial({color:0xffffff, map:snow});
     const snowman_T = new THREE.Mesh( TGeometry, TMaterial);
     snowman_T.position.set(0,15,0);
