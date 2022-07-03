@@ -17,7 +17,7 @@ function init(){
 
     // 平行光源を作成
     // new THREE.DirectionalLight(色, 光の強さ)
-    const light = new THREE.DirectionalLight(0xFFFFFF, 0.3);
+    const light = new THREE.DirectionalLight(0xFFFFFF, 0.1);
     light.castShadow = true;
     scene.add(light);
 
