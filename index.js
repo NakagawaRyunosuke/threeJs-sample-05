@@ -216,9 +216,9 @@ function init(){
 
     const moveSnowman = (mode) => {
         if(mode){
-            snowmanHeadGroup.rotation.x += 0.1;
+            snowmanHeadGroup.rotation.x += 0.01;
         }else{
-            snowmanHeadGroup.rotation.x -= 0.1;
+            snowmanHeadGroup.rotation.x -= 0.01;
         }
     }
 
