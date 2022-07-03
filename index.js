@@ -204,24 +204,41 @@ function init(){
         }
     }
 
-    let mode = true;
-    const checkMode = () => {
+    let modeY = true;
+    const checkModeY = () => {
         if(Math.floor(snowmanGroup.rotation.y) > 0.1){
             return false;
         }else if(Math.floor(snowmanGroup.rotation.y) < -0.1){
             return true;
         }else{
-            return mode;
+            return modeY;
         }
     }
 
-    const moveSnowman = (mode) => {
+    let modeX = true;
+    const checkModeX = () => {
+        if(Math.floor(snowmanGroup.rotation.y) > 0.1){
+            return false;
+        }else if(Math.floor(snowmanGroup.rotation.y) < -0.1){
+            return true;
+        }else{
+            return modeX;
+        }
+    }
+
+    const moveSnowmanY = (mode) => {
         if(mode){
             snowmanGroup.rotation.y += 0.01;
-            snowmanGroup.position.x += 1;
         }else{
             snowmanGroup.rotation.y -= 0.01;
-            snowmanGroup.position.x -= 1;
+        }
+    }
+
+    const moveSnowmanX = (mode) => {
+        if(mode){
+            snowmanGroup.position.x += 0.1;
+        }else{
+            snowmanGroup.position.x -= 0.1;
         }
     }
 
@@ -231,9 +248,11 @@ function init(){
         renderer.render(scene, camera); // レンダリング
         positionUpdate();
 
-        mode = checkMode();
-        moveSnowman(mode);
-        console.log(snowmanGroup.position.x)
+        modeY = checkModeY();
+        modeX = checkModeX();
+        moveSnowmanY(modeY);
+        moveSnowmanX(modeX);
+
         requestAnimationFrame(tick);
     }
 }
