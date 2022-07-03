@@ -104,11 +104,17 @@ function init(){
     }
 
     //雪だるま
-    const BGeometry = new THREE.SphereGeometry( 1, 32, 32 );
+    const BGeometry = new THREE.SphereGeometry( 10, 32, 32 );
     const BMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
     const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
-    snowman_B.position.set(0,1,0);
+    snowman_B.position.set(0,10,0);
     scene.add( snowman_B );
+
+    const TGeometry = new THREE.SphereGeometry( 5, 32, 32 );
+    const TMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
+    const snowman_T = new THREE.Mesh( TGeometry, TMaterial );
+    snowman_T.position.set(0,15,0);
+    scene.add( snowman_T );
 
     tick();
 
