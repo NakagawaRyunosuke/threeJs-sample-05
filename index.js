@@ -27,7 +27,7 @@ function init(){
     const controls = new THREE.OrbitControls(camera, document.getElementById("canvas"));
 
     //床
-    const groundGeometry = new THREE.PlaneGeometry(10000,10000,64,64);
+    const groundGeometry = new THREE.PlaneGeometry(1000,1000,64,64);
     const snow = new THREE.TextureLoader().load("img/snow.jpg");
     const groundMaterial = new THREE.MeshLambertMaterial({map:snow});
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
