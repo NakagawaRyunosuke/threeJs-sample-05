@@ -36,7 +36,7 @@ function init(){
     scene.add(ground);
 
     //テクスチャ
-    const texture = new THREE.ImageUtils.loadTexture("img/snowFreak.svg");
+    const texture = new THREE.ImageUtils.loadTexture("img/snowFreak.png");
     const material = new THREE.SpriteMaterial({
         map: texture,
         color: 0xffffff,
