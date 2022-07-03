@@ -76,13 +76,13 @@ function init(){
     const eyeGeometry1 = new THREE.SphereGeometry(2,32,32);
     const eyeMaterial1 = new THREE.MeshBasicMaterial({color:0x000000});
     const rightEye = new THREE.Mesh(eyeGeometry1, eyeMaterial1);
-    rightEye.position.set(-35,55,10);
+    rightEye.position.set(-35,55,13);
     scene.add(rightEye);
 
     const eyeGeometry2 = new THREE.SphereGeometry(2,32,32);
     const eyeMaterial2 = new THREE.MeshBasicMaterial({color:0x000000});
     const leftEye = new THREE.Mesh(eyeGeometry2, eyeMaterial2);
-    leftEye.position.set(-25,55,10);
+    leftEye.position.set(-25,55,13);
     scene.add(leftEye);
 
     //雪だるま口
