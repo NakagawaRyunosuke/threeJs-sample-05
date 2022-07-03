@@ -104,11 +104,11 @@ function init(){
     }
 
     //雪だるま下半身
-    const BGeometry = new THREE.SphereGeometry( 10, 32, 32 );
-    const BMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
-    const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
-    snowman_B.position.set(0,10,0);
-    snowmanGroup.add( snowman_B );
+    // const BGeometry = new THREE.SphereGeometry( 10, 32, 32 );
+    // const BMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
+    // const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
+    // snowman_B.position.set(0,10,0);
+    // snowmanGroup.add( snowman_B );
 
     //雪だるま上半身
     const TGeometry = new THREE.SphereGeometry( 5, 32, 32 );
