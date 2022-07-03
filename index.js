@@ -24,7 +24,7 @@ function init(){
     //スポットライト
     const spotLight = new THREE.SpotLight(0xffffff, 10, 250, Math.PI * 0.8, 0.25, 1);
     spotLight.castShadow = true;
-    spotLight.position.set(30, 200, -30);
+    spotLight.position.set(30, 200, 30);
     scene.add(spotLight);
 
     const spotlightHelper = new THREE.SpotLightHelper(spotLight);
@@ -59,6 +59,12 @@ function init(){
 
     const snowmanGroup = new THREE.Group();
     scene.add(snowmanGroup);
+
+    const benchGroup = new THREE.Group();
+    scene.add(benchGroup);
+
+    const lightGroup = new THREE.Group();
+    scene.add(lightGroup);
 
 
     //雪だるま下半身
@@ -104,30 +110,32 @@ function init(){
     const benchMaterial1 = new THREE.MeshLambertMaterial({color:0xCD853F});
     const benchBord = new THREE.Mesh(benchGeometry1,benchMaterial1);
     benchBord.position.set(100,30,0);
-    scene.add(benchBord);
+    benchGroup.add(benchBord);
 
     const benchGeometry2 = new THREE.BoxGeometry(10, 25, 30);
     const benchMaterial2 = new THREE.MeshLambertMaterial({color:0x000000});
     const benchleag1 = new THREE.Mesh(benchGeometry2,benchMaterial2);
     benchleag1.position.set(55,15,0);
-    scene.add(benchleag1);
+    benchGroup.add(benchleag1);
 
     const benchleag2 = new THREE.Mesh(benchGeometry2,benchMaterial2);
     benchleag2.position.set(145,15,0);
-    scene.add(benchleag2);
+    benchGroup.add(benchleag2);
+
+    benchGroup.castShadow = true;
 
     //街灯
     const lightGeometry = new THREE.CylinderGeometry( 4, 4, 200, 64 );
     const lightMaterial = new THREE.MeshLambertMaterial( {color: 0x000000} );
     const lightPool = new THREE.Mesh( lightGeometry, lightMaterial );
     lightPool.position.set(30,100,-50);
-    scene.add( lightPool );
+    lightGroup.add( lightPool );
 
     const headGeometry = new THREE.BoxGeometry(20,10,30);
     const headMaterial = new THREE.MeshLambertMaterial({color:0x000000});
     const lightHead = new THREE.Mesh(headGeometry, headMaterial);
     lightHead.position.set(30,200,-40);
-    scene.add(lightHead);
+    lightGroup.add(lightHead);
 
     // パーティクル
     const num = 5000; // パーティクルの数
