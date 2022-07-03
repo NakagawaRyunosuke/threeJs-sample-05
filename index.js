@@ -112,7 +112,8 @@ function init(){
 
     snowmanGroup.castShadow = true;
 
-    snowmanGroup.position.set(-50,0,0);
+    snowmanGroup.position.set(-100,0,0);
+    snowmanGroup.rotation.set(0,0,0);
 
     //ベンチ
     const benchGeometry1 = new THREE.BoxGeometry(100, 10, 30);
@@ -204,56 +205,13 @@ function init(){
         }
     }
 
-    let modeY = true;
-    const checkModeY = () => {
-        if(Math.floor(snowmanGroup.rotation.y) > 0.1){
-            return false;
-        }else if(Math.floor(snowmanGroup.rotation.y) < -0.8){
-            return true;
-        }else{
-            return modeY;
-        }
-    }
-
-    let modeX = true;
-    const checkModeX = () => {
-        if(Math.floor(snowmanGroup.position.x) > 0){
-            return false;
-        }else if(Math.floor(snowmanGroup.position.x) < -100){
-            return true;
-        }else{
-            return modeX;
-        }
-    }
-
-    const moveSnowmanY = (mode) => {
-        if(mode){
-            snowmanGroup.rotation.y += 0.01;
-        }else{
-            snowmanGroup.rotation.y -= 0.01;
-        }
-    }
-
-    const moveSnowmanX = (mode) => {
-        if(mode){
-            snowmanGroup.position.x += 0.5;
-        }else{
-            snowmanGroup.position.x -= 0.5;
-        }
-    }
-
     tick();
 
     function tick(){
         renderer.render(scene, camera); // レンダリング
         positionUpdate();
 
-        modeY = checkModeY();
-        modeX = checkModeX();
-        moveSnowmanY(modeY);
-        moveSnowmanX(modeX);
-        console.log("x= :"+snowmanGroup.position.x);
-        console.log("y= :"+snowmanGroup.rotation.y);
+        snowmanGroup.rotation.y += 0.01;
         requestAnimationFrame(tick);
     }
 }
