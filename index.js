@@ -133,9 +133,9 @@ function init(){
 
     const headGeometry = new THREE.BoxGeometry(20,10,30);
     const headMaterial = new THREE.MeshLambertMaterial({color:0x000000});
-    const lightHead = new THREE.Mesh(headGeometry, headMaterial);
-    lightHead.position.set(30,200,-40);
-    lightGroup.add(lightHead);
+    const lightHeadpart = new THREE.Mesh(headGeometry, headMaterial);
+    lightHeadpart.position.set(30,200,-40);
+    lightGroup.add(lightHeadpart);
 
 
 
