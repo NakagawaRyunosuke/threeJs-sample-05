@@ -233,7 +233,7 @@ function init(){
 
         mode = checkMode();
         moveSnowman(mode);
-
+        console.log(snowmanGroup.position.x)
         requestAnimationFrame(tick);
     }
 }
