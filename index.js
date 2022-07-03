@@ -27,10 +27,10 @@ function init(){
     spotLight.position.set(30, 200, -30);
     scene.add(spotLight);
 
-    const spotLightSub = new THREE.SpotLight(0xFFFFCC, 10, 250, Math.PI * 0.8, 0.25, 1);
-    spotLightSub.castShadow = true;
-    spotLightSub.position.set(30, 250, -30);
-    scene.add(spotLightSub);
+    // const spotLightSub = new THREE.SpotLight(0xFFFFCC, 10, 250, Math.PI * 0.8, 0.25, 1);
+    // spotLightSub.castShadow = true;
+    // spotLightSub.position.set(30, 250, -30);
+    // scene.add(spotLightSub);
 
     // const spotlightHelper = new THREE.SpotLightHelper(spotLight);
     // scene.add(spotlightHelper);
@@ -205,9 +205,9 @@ function init(){
 
     let mode = true;
     const checkMode = () => {
-        if(Math.floor(snowman_T.rotation.z) > 0.1){
+        if(Math.floor(snowmanHeadGroup.rotation.x) > 0.5){
             return false;
-        }else if(Math.floor(snowman_T.rotation.z < -0.1)){
+        }else if(Math.floor(snowmanHeadGroup.rotation.x < -0.5)){
             return true;
         }else{
             return mode;
@@ -216,9 +216,9 @@ function init(){
 
     const moveSnowman = (mode) => {
         if(mode){
-            snowman_T.rotation.z += 0.01;
+            snowmanHeadGroup.rotation.x += 0.01;
         }else{
-            snowman_T.rotation.z -= 0.01;
+            snowmanHeadGroup.rotation.x -= 0.01;
         }
     }
 
