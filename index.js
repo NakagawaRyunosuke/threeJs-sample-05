@@ -109,7 +109,7 @@ function init(){
     const TGeometry = new THREE.SphereGeometry( 5, 32, 32 );
     const TMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
     const snowman_T = new THREE.Mesh( TGeometry, TMaterial );
-    snowman_T.position.set(0,15,0);
+    snowman_T.position.set(0,20,0);
     scene.add( snowman_T );
 
     tick();
