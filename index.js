@@ -217,9 +217,9 @@ function init(){
 
     let modeX = true;
     const checkModeX = () => {
-        if(Math.floor(snowmanGroup.rotation.y) > 0.1){
+        if(Math.floor(snowmanGroup.rotation.x) > 0.1){
             return false;
-        }else if(Math.floor(snowmanGroup.rotation.y) < -0.1){
+        }else if(Math.floor(snowmanGroup.rotation.x) < -0.1){
             return true;
         }else{
             return modeX;
