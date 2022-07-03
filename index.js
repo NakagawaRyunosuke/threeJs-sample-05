@@ -64,6 +64,30 @@ function init(){
     snowman_T.position.set(-30,50,0);
     snowmanGroup.add( snowman_T );
 
+    //雪だるま鼻
+    const coneGeometry = new THREE.ConeGeometry( 5, 20, 32 );
+    const coneMaterial = new THREE.MeshBasicMaterial( {color: 0xFF0000} );
+    const cone = new THREE.Mesh( coneGeometry, coneMaterial );
+    cone.position.set(-30,50,10);
+    cone.rotation.x = Math.PI/2;
+    scene.add( cone );
+
+    //雪だるま目
+    const eyeGeometry1 = new THREE.SphereGeometry(2,32,32);
+    const eyeMaterial1 = new THREE.MeshBasicMaterial({color:0x000000});
+    const rightEye = new THREE.Mesh(eyeGeometry1, eyeMaterial1);
+    rightEye.position.set(-35,55,10);
+    scene.add(rightEye);
+
+    const eyeGeometry2 = new THREE.SphereGeometry(2,32,32);
+    const eyeMaterial2 = new THREE.MeshBasicMaterial({color:0x000000});
+    const leftEye = new THREE.Mesh(eyeGeometry2, eyeMaterial2);
+    leftEye.position.set(-25,55,10);
+    scene.add(leftEye);
+
+    //雪だるま口
+
+
     //街灯
     const lightGeometry = new THREE.CylinderGeometry( 4, 4, 200, 64 );
     const lightMaterial = new THREE.MeshBasicMaterial( {color: 0x000000} );
