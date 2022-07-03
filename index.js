@@ -13,7 +13,7 @@ function init(){
 
     // シーンを作成
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog(0x333333, 100, 1000);
+    scene.fog = new THREE.Fog(0x333333, 10, 100);
 
     // 平行光源を作成
     // new THREE.DirectionalLight(色, 光の強さ)
