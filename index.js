@@ -22,7 +22,7 @@ function init(){
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
-    camera.position.set(0, 100, 100);
+    camera.position.set(0, 3, 100);
     // カメラコントローラーを作成
     const controls = new THREE.OrbitControls(camera, document.getElementById("canvas"));
 
@@ -55,7 +55,7 @@ function init(){
         sprite.position.x = range * (Math.random() - 0.5);
         sprite.position.y = range * (Math.random() - 0.5);
         sprite.position.z = range * (Math.random() - 0.5);
-        sprite.scale.x = sprite.scale.y = sprite.scale.z = Math.random() * 0.1;
+        sprite.scale.x = sprite.scale.y = sprite.scale.z = Math.random() * 0.001;
         sprite.matrixAutoUpdate = false;
         sprite.updateMatrix();
         group.add( sprite );
