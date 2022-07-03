@@ -236,9 +236,9 @@ function init(){
 
     const moveSnowmanX = (mode) => {
         if(mode){
-            snowmanGroup.position.x += 1;
+            snowmanGroup.position.x += 0.5;
         }else{
-            snowmanGroup.position.x -= 1;
+            snowmanGroup.position.x -= 0.5;
         }
     }
 
