@@ -13,11 +13,12 @@ function init(){
 
     // シーンを作成
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog(0xf5f5f5, 100, 1000);
+    scene.fog = new THREE.Fog(0x000000, 100, 1000);
 
-    //平行光源を作成
-    //new THREE.DirectionalLight(色, 光の強さ)
+    // // 平行光源を作成
+    // // new THREE.DirectionalLight(色, 光の強さ)
     // const light = new THREE.DirectionalLight(0xFFFFFF, 1);
+    // light.castShadow = true;
     // scene.add(light);
 
     //スポットライト
@@ -26,8 +27,8 @@ function init(){
     spotLight.position.set(30, 200, -30);
     scene.add(spotLight);
 
-    const lightHelper = new THREE.SpotLightHelper(spotLight);
-    scene.add(lightHelper);
+    const spotlightHelper = new THREE.SpotLightHelper(spotLight);
+    scene.add(spotlightHelper);
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
