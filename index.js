@@ -64,8 +64,8 @@ function init(){
     const group = new THREE.Group();
     scene.add( group );
 
-    const snowmanGroup = new THREE.Group();
-    scene.add(snowmanGroup);
+    const snowmanHeadGroup = new THREE.Group();
+    scene.add(snowmanHeadGroup);
 
     const benchGroup = new THREE.Group();
     scene.add(benchGroup);
@@ -79,14 +79,15 @@ function init(){
     const BMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
     const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
     snowman_B.position.set(-30,20,0);
-    snowmanGroup.add( snowman_B );
+    snowman_B.castShadow = true;
+    scene.add(snowman_B);
 
     //雪だるま上半身
     const TGeometry = new THREE.SphereGeometry( 15, 32, 32 );
     const TMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
     const snowman_T = new THREE.Mesh( TGeometry, TMaterial );
     snowman_T.position.set(-30,50,0);
-    snowmanGroup.add( snowman_T );
+    snowmanHeadGroup.add( snowman_T );
  
 
     //雪だるま鼻
@@ -95,22 +96,22 @@ function init(){
     const cone = new THREE.Mesh( coneGeometry, coneMaterial );
     cone.position.set(-30,50,10);
     cone.rotation.x = Math.PI/2;
-    snowmanGroup.add( cone );
+    snowmanHeadGroup.add( cone );
 
     //雪だるま目
     const eyeGeometry1 = new THREE.SphereGeometry(2,32,32);
     const eyeMaterial1 = new THREE.MeshLambertMaterial({color:0x000000});
     const rightEye = new THREE.Mesh(eyeGeometry1, eyeMaterial1);
     rightEye.position.set(-35,55,13);
-    snowmanGroup.add(rightEye);
+    snowmanHeadGroup.add(rightEye);
 
     const eyeGeometry2 = new THREE.SphereGeometry(2,32,32);
     const eyeMaterial2 = new THREE.MeshLambertMaterial({color:0x000000});
     const leftEye = new THREE.Mesh(eyeGeometry2, eyeMaterial2);
     leftEye.position.set(-25,55,13);
-    snowmanGroup.add(leftEye);
+    snowmanHeadGroup.add(leftEye);
 
-    snowmanGroup.castShadow = true;
+    snowmanHeadGroup.castShadow = true;
 
     //ベンチ
     const benchGeometry1 = new THREE.BoxGeometry(100, 10, 30);
@@ -202,12 +203,37 @@ function init(){
         }
     }
 
+    let mode = true;
+    const checkMode = () => {
+        if(Math.floor(snowmanHeadGroup.rotation.z) > 0.5){
+            return false;
+        }else if(Math.floor(snowmanHeadGroup.rotation.z < -0.5)){
+            return true;
+        }else{
+            return mode;
+        }
+    }
+
+    const moveSnowman = (mode) => {
+        if(mode){
+            snowmanHeadGroup.rotation.z += 0.01;
+        }else{
+            snowmanHeadGroup.rotation.z -= 0.01;
+        }
+    }
+
 
     tick();
 
     function tick(){
         renderer.render(scene, camera); // レンダリング
         positionUpdate();
+
+        mode = checkMode();
+        console.log(snowmanHeadGroup.rotation.z)
+        console.log(mode)
+        moveSnowman(mode);
+
         requestAnimationFrame(tick);
     }
 }
