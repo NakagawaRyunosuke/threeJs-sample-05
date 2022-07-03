@@ -110,12 +110,19 @@ function init(){
     // snowman_B.position.set(0,10,0);
     // snowmanGroup.add( snowman_B );
 
-    //雪だるま上半身
-    const TGeometry = new THREE.SphereGeometry( 1, 32, 32 );
-    const TMaterial = new THREE.MeshLambertMaterial({color:0xffffff, map:snow});
-    const snowman_T = new THREE.Mesh( TGeometry, TMaterial);
-    snowman_T.position.set(0,15,0);
-    scene.add(snowman_T);
+    // //雪だるま上半身
+    // const TGeometry = new THREE.SphereGeometry( 1, 32, 32 );
+    // const TMaterial = new THREE.MeshLambertMaterial({color:0xffffff, map:snow});
+    // const snowman_T = new THREE.Mesh( TGeometry, TMaterial);
+    // snowman_T.position.set(0,15,0);
+    // scene.add(snowman_T);
+
+    //街灯
+    const lightGeometry = new THREE.CylinderGeometry( 5, 5, 20, 32 );
+    const lightMaterial = new THREE.MeshBasicMaterial( {color: 0x000000} );
+    const lightPool = new THREE.Mesh( lightGeometry, lightMaterial );
+    lightPool.position.set(5,0,1);
+    scene.add( lightPool );
 
     tick();
 
