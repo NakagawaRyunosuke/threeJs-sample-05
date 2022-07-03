@@ -55,7 +55,7 @@ function init(){
         sprite.position.x = range * (Math.random() - 0.5);
         sprite.position.y = range * (Math.random() - 0.5);
         sprite.position.z = range * (Math.random() - 0.5);
-        sprite.scale.x = sprite.scale.y = sprite.scale.z = Math.random() + 1;
+        sprite.scale.x = sprite.scale.y = sprite.scale.z = Math.random() * 0.1;
         sprite.matrixAutoUpdate = false;
         sprite.updateMatrix();
         group.add( sprite );
