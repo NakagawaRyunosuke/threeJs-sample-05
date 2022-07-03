@@ -24,11 +24,11 @@ function init(){
     //スポットライト
     const spotLight = new THREE.SpotLight(0xffffff, 10, 250, Math.PI * 0.8, 0.25, 1);
     spotLight.castShadow = true;
-    spotLight.position.set(30, 200, 30);
+    spotLight.position.set(30, 200, -30);
     scene.add(spotLight);
 
-    const spotlightHelper = new THREE.SpotLightHelper(spotLight);
-    scene.add(spotlightHelper);
+    // const spotlightHelper = new THREE.SpotLightHelper(spotLight);
+    // scene.add(spotlightHelper);
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
@@ -136,6 +136,8 @@ function init(){
     const lightHead = new THREE.Mesh(headGeometry, headMaterial);
     lightHead.position.set(30,200,-40);
     lightGroup.add(lightHead);
+
+
 
     // パーティクル
     const num = 5000; // パーティクルの数
