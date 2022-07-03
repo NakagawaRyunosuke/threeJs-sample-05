@@ -104,7 +104,7 @@ function init(){
     }
 
     //雪だるま
-    const BGeometry = new THREE.SphereGeometry( 100, 32, 32 );
+    const BGeometry = new THREE.SphereGeometry( 10, 32, 32 );
     const BMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
     const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
     snowman_B.position.set(0,100,0);
