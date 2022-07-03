@@ -22,13 +22,13 @@ function init(){
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
-    camera.position.set(0, 3, 100);
+    camera.position.set(0, 3, 10);
     // カメラコントローラーを作成
     const controls = new THREE.OrbitControls(camera, document.getElementById("canvas"));
 
     //床
     const groundGeometry = new THREE.PlaneGeometry(10000,10000,64,64);
-    const snow = new THREE.ImageUtils.loadTexture("img/snow.jpg");
+    const snow = new THREE.TextureLoader().load("img/snow.jpg");
     const groundMaterial = new THREE.MeshLambertMaterial({map:snow});
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
     ground.rotation.x = Math.PI / -2;
@@ -55,7 +55,7 @@ function init(){
         sprite.position.x = range * (Math.random() - 0.5);
         sprite.position.y = range * (Math.random() - 0.5);
         sprite.position.z = range * (Math.random() - 0.5);
-        sprite.scale.x = sprite.scale.y = sprite.scale.z = Math.random() * 10 + 5;
+        sprite.scale.x = sprite.scale.y = sprite.scale.z = Math.random() * 10 + 1;
         sprite.matrixAutoUpdate = false;
         sprite.updateMatrix();
         group.add( sprite );
