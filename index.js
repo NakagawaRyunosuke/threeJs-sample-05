@@ -225,7 +225,6 @@ function init(){
         snowmanHeadGroup.rotation.y += 0.01;
         console.log(snowmanGroup.rotation.y)
         
-        
         requestAnimationFrame(tick);
     }
 }
