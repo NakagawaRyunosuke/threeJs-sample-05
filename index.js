@@ -13,7 +13,7 @@ function init(){
 
     // シーンを作成
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog(0x000000, 0, 1000);
+    //scene.fog = new THREE.Fog(0x000000, 0, 1000);
 
     // 平行光源を作成
     // new THREE.DirectionalLight(色, 光の強さ)
@@ -22,7 +22,7 @@ function init(){
     scene.add(light);
 
     //スポットライト
-    const spotLight = new THREE.SpotLight(0xFFFFCC, 5, 250, Math.PI * 0.8, 0.25, 1);
+    const spotLight = new THREE.SpotLight(0xFFFFCC, 10, 250, Math.PI * 0.8, 0.25, 1);
     spotLight.castShadow = true;
     spotLight.position.set(30, 200, -30);
     scene.add(spotLight);
