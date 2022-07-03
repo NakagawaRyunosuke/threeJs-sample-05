@@ -15,11 +15,11 @@ function init(){
     const scene = new THREE.Scene();
     scene.fog = new THREE.Fog(0x333333, 0, 1000);
 
-    // // 平行光源を作成
-    // // new THREE.DirectionalLight(色, 光の強さ)
-    // const light = new THREE.DirectionalLight(0xFFFFFF, 0.5);
-    // light.castShadow = true;
-    // scene.add(light);
+    // 平行光源を作成
+    // new THREE.DirectionalLight(色, 光の強さ)
+    const light = new THREE.DirectionalLight(0xFFFFFF, 0.5);
+    light.castShadow = true;
+    scene.add(light);
 
     //スポットライト
     const spotLight = new THREE.SpotLight(0xFFFFCC, 5, 250, Math.PI * 0.8, 0.25, 1);
