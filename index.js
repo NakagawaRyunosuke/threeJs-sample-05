@@ -22,7 +22,7 @@ function init(){
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
-    camera.position.set(-300, 300, 350);
+    camera.position.set(-100, 400, 350);
     // カメラコントローラーを作成
     const controls = new THREE.OrbitControls(camera, document.getElementById("canvas"));
 
@@ -85,20 +85,38 @@ function init(){
     leftEye.position.set(-25,55,13);
     scene.add(leftEye);
 
-    //雪だるま口
+    //ベンチ
+    const benchGeometry1 = new THREE.BoxGeometry(100, 10, 30);
+    const benchMaterial1 = new THREE.MeshLambertMaterial({color:0xCD853F});
+    const benchBord = new THREE.Mesh(benchGeometry1,benchMaterial1);
+    benchBord.position.set(100,30,0);
+    scene.add(benchBord);
+
+    const benchGeometry2 = new THREE.BoxGeometry(10, 25, 30);
+    const benchMaterial2 = new THREE.MeshLambertMaterial({color:0x000000});
+    const benchleag1 = new THREE.Mesh(benchGeometry2,benchMaterial2);
+    benchleag1.position.set(55,15,0);
+    scene.add(benchleag1);
+
+    const benchleag2 = new THREE.Mesh(benchGeometry2,benchMaterial2);
+    benchleag2.position.set(145,15,0);
+    scene.add(benchleag2);
+
+
+    
 
 
     //街灯
     const lightGeometry = new THREE.CylinderGeometry( 4, 4, 200, 64 );
     const lightMaterial = new THREE.MeshBasicMaterial( {color: 0x000000} );
     const lightPool = new THREE.Mesh( lightGeometry, lightMaterial );
-    lightPool.position.set(0,100,-50);
+    lightPool.position.set(30,100,-50);
     scene.add( lightPool );
 
     const headGeometry = new THREE.BoxGeometry(20,10,30);
     const headMaterial = new THREE.MeshBasicMaterial({color:0x000000});
     const lightHead = new THREE.Mesh(headGeometry, headMaterial);
-    lightHead.position.set(0,200,-40);
+    lightHead.position.set(30,200,-40);
     scene.add(lightHead);
 
     // パーティクル
