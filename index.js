@@ -22,10 +22,15 @@ function init(){
     scene.add(light);
 
     //スポットライト
-    const spotLight = new THREE.SpotLight(0xFFFFCC, 0, 250, Math.PI * 0.8, 0.25, 1);
+    const spotLight = new THREE.SpotLight(0xFFFFCC, 10, 250, Math.PI * 0.8, 0.25, 1);
     spotLight.castShadow = true;
     spotLight.position.set(30, 200, -30);
     scene.add(spotLight);
+
+    const spotLightSub = new THREE.SpotLight(0xFFFFCC, 10, 250, Math.PI * 0.8, 0.25, 1);
+    spotLightSub.castShadow = true;
+    spotLightSub.position.set(30, 220, -30);
+    scene.add(spotLightSub);
 
     // const spotlightHelper = new THREE.SpotLightHelper(spotLight);
     // scene.add(spotlightHelper);
