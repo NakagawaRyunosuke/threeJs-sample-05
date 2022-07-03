@@ -36,7 +36,7 @@ function init(){
     scene.add(ground);
 
     //テクスチャ
-    const texture = new THREE.ImageUtils.loadTexture("img/snowFreak.png");
+    const texture = new THREE.ImageUtils.loadTexture("img/snowFreak.svg");
     const material = new THREE.SpriteMaterial({
         map: texture,
         color: 0xffffff,
@@ -55,7 +55,7 @@ function init(){
         sprite.position.x = range * (Math.random() - 0.5);
         sprite.position.y = range * (Math.random() - 0.5);
         sprite.position.z = range * (Math.random() - 0.5);
-        sprite.scale.x = sprite.scale.y = sprite.scale.z = Math.random() * 0.001;
+        sprite.scale.x = sprite.scale.y = sprite.scale.z = Math.random() * 10;
         sprite.matrixAutoUpdate = false;
         sprite.updateMatrix();
         group.add( sprite );
