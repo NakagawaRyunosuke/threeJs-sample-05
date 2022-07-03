@@ -119,7 +119,7 @@ function init(){
 
     snowmanGroup.castShadow = true;
 
-    snowmanGroup.position.set(-80,0,0);
+    snowmanGroup.position.set(-60,0,0);
     snowmanGroup.rotation.set(0,0,0);
 
     //ベンチ
@@ -212,12 +212,33 @@ function init(){
         }
     }
 
+    let mode = true;
+    const modeCheck = (mode) => {
+        if(snowmanHeadGroup.rotation.x > 0.5){
+            return false;
+        }else if(snowmanHeadGroup.rotation.x < 0.1){
+            return true;
+        }else{
+            return mode;
+        }
+    }
+
+    const snowmanHeadMove = (mode) => {
+        if(mode){
+            snowmanHeadGroup.rotation.x += 0.01;
+        }else{
+            snowmanHeadGroup.rotation.x -= 0.01;
+        }
+    } 
+
     tick();
 
     function tick(){
         renderer.render(scene, camera); // レンダリング
         positionUpdate();
 
+        mode = modeCheck(mode);
+        snowmanHeadMove(mode);
         snowmanGroup.rotation.y += 0.01;
         requestAnimationFrame(tick);
     }
