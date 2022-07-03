@@ -13,7 +13,7 @@ function init(){
 
     // シーンを作成
     const scene = new THREE.Scene();
-    scene.fog = new THREE.Fog(0xf5f5f5, 10, 100);
+    scene.fog = new THREE.Fog(0xf5f5f5, 50, 1000);
 
     // 平行光源を作成
     // new THREE.DirectionalLight(色, 光の強さ)
@@ -27,7 +27,7 @@ function init(){
     const controls = new THREE.OrbitControls(camera, document.getElementById("canvas"));
 
     //床
-    const groundGeometry = new THREE.PlaneGeometry(100,100,64,64);
+    const groundGeometry = new THREE.PlaneGeometry(10000,10000,64,64);
     const snow = new THREE.ImageUtils.loadTexture("img/snow.jpg");
     const groundMaterial = new THREE.MeshLambertMaterial({map:snow});
     const ground = new THREE.Mesh(groundGeometry, groundMaterial);
