@@ -53,6 +53,8 @@ function init(){
         color: 0xffffff,
     });
 
+    const woodTexture = new THREE.TextureLoader().load("img/wood.jpg");
+
     // グループ
     const group = new THREE.Group();
     scene.add( group );
@@ -107,7 +109,7 @@ function init(){
 
     //ベンチ
     const benchGeometry1 = new THREE.BoxGeometry(100, 10, 30);
-    const benchMaterial1 = new THREE.MeshLambertMaterial({color:0xCD853F});
+    const benchMaterial1 = new THREE.MeshLambertMaterial({color:0xCD853F, map:woodTexture});
     const benchBord = new THREE.Mesh(benchGeometry1,benchMaterial1);
     benchBord.position.set(100,30,0);
     benchGroup.add(benchBord);
