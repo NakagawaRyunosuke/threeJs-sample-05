@@ -22,7 +22,7 @@ function init(){
 
     // カメラを作成
     const camera = new THREE.PerspectiveCamera(45, width / height);
-    camera.position.set(0, 3, 10);
+    camera.position.set(0, 10, 100);
     // カメラコントローラーを作成
     const controls = new THREE.OrbitControls(camera, document.getElementById("canvas"));
 
@@ -105,9 +105,9 @@ function init(){
 
     //雪だるま
     const BGeometry = new THREE.SphereGeometry( 1, 32, 32 );
-    const BMaterial = new THREE.MeshLambertMaterial( {color: 0xFF0000, map:snow} );
+    const BMaterial = new THREE.MeshLambertMaterial( {map:snow} );
     const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
-    snowman_B.position.set(0,0,0);
+    snowman_B.position.set(0,1,0);
     scene.add( snowman_B );
 
     tick();
