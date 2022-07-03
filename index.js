@@ -140,8 +140,8 @@ function init(){
 
 
     // パーティクル
-    const num = 250; // パーティクルの数
-    const range = 500; // 配置する範囲
+    const num = 1000; // パーティクルの数
+    const range = 1000; // 配置する範囲
     const rangeHalf = range / 2;
 
     for ( let i = 0; i < num; i ++ ) {
