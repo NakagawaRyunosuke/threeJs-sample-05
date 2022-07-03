@@ -103,7 +103,7 @@ function init(){
         }
     }
 
-    雪だるま下半身
+    //雪だるま下半身
     const BGeometry = new THREE.SphereGeometry( 10, 32, 32 );
     const BMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
     const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
@@ -118,10 +118,10 @@ function init(){
     snowmanGroup.add( snowman_T );
 
     //街灯
-    const lightGeometry = new THREE.CylinderGeometry( 1, 1, 50, 64 );
+    const lightGeometry = new THREE.CylinderGeometry( 1, 1, 100, 64 );
     const lightMaterial = new THREE.MeshBasicMaterial( {color: 0x000000} );
     const lightPool = new THREE.Mesh( lightGeometry, lightMaterial );
-    lightPool.position.set(10,0,10);
+    lightPool.position.set(10,100,10);
     scene.add( lightPool );
 
     tick();
