@@ -68,7 +68,7 @@ function init(){
     const lightGeometry = new THREE.CylinderGeometry( 4, 4, 100, 64 );
     const lightMaterial = new THREE.MeshBasicMaterial( {color: 0x000000} );
     const lightPool = new THREE.Mesh( lightGeometry, lightMaterial );
-    lightPool.position.set(10,0,10);
+    lightPool.position.set(10,100,10);
     scene.add( lightPool );
 
     // const headGeometry = new THREE.BoxGeometry(2,1,3);
