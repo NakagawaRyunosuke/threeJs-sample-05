@@ -29,7 +29,7 @@ function init(){
 
     const spotLightSub = new THREE.SpotLight(0xFFFFCC, 10, 250, Math.PI * 0.8, 0.25, 1);
     spotLightSub.castShadow = true;
-    spotLightSub.position.set(30, 220, -30);
+    spotLightSub.position.set(30, 250, -30);
     scene.add(spotLightSub);
 
     // const spotlightHelper = new THREE.SpotLightHelper(spotLight);
@@ -143,6 +143,8 @@ function init(){
     const lightHeadpart = new THREE.Mesh(headGeometry, headMaterial);
     lightHeadpart.position.set(30,200,-40);
     lightGroup.add(lightHeadpart);
+
+    lightGroup.castShadow = true;
 
 
 
