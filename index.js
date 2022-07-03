@@ -147,7 +147,7 @@ function init(){
     for ( let i = 0; i < num; i ++ ) {
         const sprite = new THREE.Sprite( material ); //常に正面を向く3Dオブジェクト
         sprite.position.x = range * (Math.random() - 0.5);
-        sprite.position.y = range * (Math.random() - 0.5);
+        sprite.position.y = range * (Math.random() - 0.5)+10;
         sprite.position.z = range * (Math.random() - 0.5);
         sprite.scale.x = sprite.scale.y = sprite.scale.z = Math.random() * 10 + 0.5;
         sprite.matrixAutoUpdate = false;
