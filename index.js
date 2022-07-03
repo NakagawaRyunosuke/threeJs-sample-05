@@ -112,6 +112,8 @@ function init(){
 
     snowmanGroup.castShadow = true;
 
+    snowmanGroup.position.set(-50,0,0);
+
     //ベンチ
     const benchGeometry1 = new THREE.BoxGeometry(100, 10, 30);
     const benchMaterial1 = new THREE.MeshLambertMaterial({color:0xCD853F, map:woodTexture});
