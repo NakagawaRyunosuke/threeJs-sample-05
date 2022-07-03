@@ -230,7 +230,7 @@ function init(){
         positionUpdate();
 
         mode = checkMode();
-        console.log(snowmanHeadGroup.rotation.z)
+        console.log(snowmanHeadGroup.rotation.x)
         console.log(mode)
         moveSnowman(mode);
 
