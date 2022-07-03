@@ -252,8 +252,8 @@ function init(){
         modeX = checkModeX();
         moveSnowmanY(modeY);
         moveSnowmanX(modeX);
-        console.log(snowmanGroup.position.x);
-        console.log(snowmanGroup.rotation.y);
+        console.log("x= :"+snowmanGroup.position.x);
+        console.log("y= :"+snowmanGroup.rotation.y);
         requestAnimationFrame(tick);
     }
 }
