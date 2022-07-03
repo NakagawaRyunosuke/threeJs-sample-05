@@ -46,7 +46,7 @@ function init(){
     const group = new THREE.Group();
     scene.add( group );
     // パーティクル
-    const num = 1000; // パーティクルの数
+    const num = 5000; // パーティクルの数
     const range = 1000; // 配置する範囲
     const rangeHalf = range / 2;
 
