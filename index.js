@@ -214,33 +214,13 @@ function init(){
         }
     }
 
-    let mode = true;
-    const modeCheck = (mode) => {
-        if(snowmanHeadGroup.rotation.x > 0.5){
-            return false;
-        }else if(snowmanHeadGroup.rotation.x < 0.1){
-            return true;
-        }else{
-            return mode;
-        }
-    }
-
-    const snowmanHeadMove = (mode) => {
-        if(mode){
-            snowmanHeadGroup.rotation.x += 0.01;
-        }else{
-            snowmanHeadGroup.rotation.x -= 0.01;
-        }
-    } 
-
     tick();
 
     function tick(){
         renderer.render(scene, camera); // レンダリング
         positionUpdate();
 
-        mode = modeCheck(mode);
-        snowmanHeadMove(mode);
+    
         snowmanGroup.rotation.y += 0.01;
         snowmanHeadGroup.rotation.y += 0.01;
         requestAnimationFrame(tick);
