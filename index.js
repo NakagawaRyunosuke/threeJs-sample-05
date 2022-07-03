@@ -17,7 +17,7 @@ function init(){
 
     // 平行光源を作成
     // new THREE.DirectionalLight(色, 光の強さ)
-    const light = new THREE.DirectionalLight(0xFFFFFF, 0.5);
+    const light = new THREE.DirectionalLight(0xFFFFFF, 0.3);
     light.castShadow = true;
     scene.add(light);
 
@@ -140,8 +140,8 @@ function init(){
 
 
     // パーティクル
-    const num = 50; // パーティクルの数
-    const range = 100; // 配置する範囲
+    const num = 250; // パーティクルの数
+    const range = 500; // 配置する範囲
     const rangeHalf = range / 2;
 
     for ( let i = 0; i < num; i ++ ) {
