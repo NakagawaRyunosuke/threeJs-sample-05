@@ -218,10 +218,10 @@ function init(){
     const moveSnowman = (mode) => {
         if(mode){
             snowmanGroup.rotation.y += 0.01;
-            snowmanGroup.position.x += 0.01;
+            snowmanGroup.position.x += 1;
         }else{
             snowmanGroup.rotation.y -= 0.01;
-            snowmanGroup.position.x -= 0.01;
+            snowmanGroup.position.x -= 1;
         }
     }
 
