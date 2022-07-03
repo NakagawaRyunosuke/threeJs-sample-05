@@ -50,19 +50,19 @@ function init(){
     scene.add(snowmanGroup);
 
 
-    // //雪だるま下半身
-    // const BGeometry = new THREE.SphereGeometry( 10, 32, 32 );
-    // const BMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
-    // const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
-    // snowman_B.position.set(0,10,0);
-    // snowmanGroup.add( snowman_B );
+    //雪だるま下半身
+    const BGeometry = new THREE.SphereGeometry( 10, 32, 32 );
+    const BMaterial = new THREE.MeshLambertMaterial( {color: 0xffffff,map:snow} );
+    const snowman_B = new THREE.Mesh( BGeometry, BMaterial );
+    snowman_B.position.set(0,10,0);
+    snowmanGroup.add( snowman_B );
 
-    // //雪だるま上半身
-    // const TGeometry = new THREE.SphereGeometry( 1, 32, 32 );
-    // const TMaterial = new THREE.MeshLambertMaterial({color:0xffffff, map:snow});
-    // const snowman_T = new THREE.Mesh( TGeometry, TMaterial);
-    // snowman_T.position.set(0,15,0);
-    // snowmanGroup.add( snowman_T );
+    //雪だるま上半身
+    const TGeometry = new THREE.SphereGeometry( 1, 32, 32 );
+    const TMaterial = new THREE.MeshLambertMaterial({color:0xffffff, map:snow});
+    const snowman_T = new THREE.Mesh( TGeometry, TMaterial);
+    snowman_T.position.set(0,15,0);
+    snowmanGroup.add( snowman_T );
 
     //街灯
     const lightGeometry = new THREE.CylinderGeometry( 4, 4, 100, 64 );
@@ -71,11 +71,11 @@ function init(){
     lightPool.position.set(10,100,10);
     scene.add( lightPool );
 
-    // const headGeometry = new THREE.BoxGeometry(2,1,3);
-    // const headMaterial = new THREE.MeshBasicMaterial({color:0x000000});
-    // const lightHead = new THREE.Mesh(headGeometry, headMaterial);
-    // lightHead.position.set(10,50,10);
-    // scene.add(lightHead);
+    const headGeometry = new THREE.BoxGeometry(2,1,3);
+    const headMaterial = new THREE.MeshBasicMaterial({color:0x000000});
+    const lightHead = new THREE.Mesh(headGeometry, headMaterial);
+    lightHead.position.set(10,50,10);
+    scene.add(lightHead);
 
     // パーティクル
     const num = 5000; // パーティクルの数
