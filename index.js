@@ -157,7 +157,7 @@ function init(){
         group.add( sprite );
     }
 
-    //位置を変える------------------
+    //位置を変える
     const windX = 0.25; //x方向の速度（共通）
     const variationX = 0.25; //x方向の速度にバラつきを加える
     const gravityY = 0.5 //y方向の速度（共通）
@@ -177,7 +177,7 @@ function init(){
                 obj.position.x +=  windX + variationX * ( i / num - 0.5  ) ;
             }
             //y
-            if( obj.position.y < - rangeHalf){
+            if( obj.position.y < 0){
                 obj.position.y = rangeHalf;
             }else{
                 obj.position.y -= gravityY + variationY * i / num ;
