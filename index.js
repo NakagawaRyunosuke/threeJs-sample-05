@@ -70,37 +70,33 @@ function init(){
     const variationZ = 0.5;//z方向の速度にバラつきを加える
 
     const positionUpdate = () =>{
-
         for ( let i = 0; i < num; i ++ ) {
-
             const obj = group.children[ i ];
             //x
             if( obj.position.x < - rangeHalf){
-            obj.position.x = rangeHalf;
+                obj.position.x = rangeHalf;
             }else if ( obj.position.x > rangeHalf){
-            obj.position.x = - rangeHalf;
+                obj.position.x = - rangeHalf;
             }else{
-            obj.position.x +=  windX + variationX * ( i / num - 0.5  ) ;
+                obj.position.x +=  windX + variationX * ( i / num - 0.5  ) ;
             }
             //y
             if( obj.position.y < - rangeHalf){
-            obj.position.y = rangeHalf;
+                obj.position.y = rangeHalf;
             }else{
-            obj.position.y -= gravityY + variationY * i / num ;
+                obj.position.y -= gravityY + variationY * i / num ;
             }
             //z
             if( obj.position.z < - rangeHalf){
-            obj.position.z = rangeHalf;
+                obj.position.z = rangeHalf;
             }else if ( obj.position.z > rangeHalf){
-            obj.position.z = - rangeHalf;
+                obj.position.z = - rangeHalf;
             }else{
-            obj.position.z +=  windZ + variationZ * ( i / num - 0.5  ) ;
+                obj.position.z +=  windZ + variationZ * ( i / num - 0.5  ) ;
             }
             obj.matrixAutoUpdate = false;
             obj.updateMatrix();
         }
-
-
     }
 
     //雪だるま
