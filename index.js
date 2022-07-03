@@ -222,7 +222,6 @@ function init(){
         }
     }
 
-
     tick();
 
     function tick(){
