@@ -9,21 +9,22 @@ function init(){
     });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(width, height);
-    renderer.setClearColor(0xf5f5f5, 1);
+    renderer.setClearColor(0x000000, 1);
 
     // シーンを作成
     const scene = new THREE.Scene();
     scene.fog = new THREE.Fog(0xf5f5f5, 100, 1000);
 
-    // 平行光源を作成
-    // new THREE.DirectionalLight(色, 光の強さ)
+    //平行光源を作成
+    //new THREE.DirectionalLight(色, 光の強さ)
     // const light = new THREE.DirectionalLight(0xFFFFFF, 1);
     // scene.add(light);
 
     //スポットライト
-    const spotLight = new THREE.SpotLight(0xFFD700, 0.5, 250, Math.PI * 0.8, 0.25, 1);
+    const spotLight = new THREE.SpotLight(0xFFD700, 0.1, 250, Math.PI * 0.8, 0.25, 1);
     spotLight.castShadow = true;
     spotLight.position.set(30, 200, -30);
+    scene.add(spotLight);
 
     const lightHelper = new THREE.SpotLightHelper(spotLight);
     scene.add(lightHelper);
