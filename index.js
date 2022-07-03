@@ -220,10 +220,8 @@ function init(){
         renderer.render(scene, camera); // レンダリング
         positionUpdate();
 
-        
         snowmanGroup.rotation.y += 0.01;
         snowmanHeadGroup.rotation.y += 0.01;
-        console.log(snowmanGroup.rotation.y)
         
         requestAnimationFrame(tick);
     }
