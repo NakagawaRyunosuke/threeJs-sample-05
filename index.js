@@ -231,8 +231,6 @@ function init(){
         positionUpdate();
 
         mode = checkMode();
-        console.log("y= "+snowmanHeadGroup.rotation.y)
-        console.log(mode)
         moveSnowman(mode);
 
         requestAnimationFrame(tick);
