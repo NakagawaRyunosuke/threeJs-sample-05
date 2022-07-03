@@ -124,10 +124,10 @@ function init(){
     lightPool.position.set(10,50,10);
     scene.add( lightPool );
 
-    const headGeometry = new THREE.BoxGeometry(0.5,0.2,1);
+    const headGeometry = new THREE.BoxGeometry(2,1,3);
     const headMaterial = new THREE.MeshBasicMaterial({color:0x000000});
     const lightHead = new THREE.Mesh(headGeometry, headMaterial);
-    lightHead.position.set(10,100,10);
+    lightHead.position.set(10,50,10);
     scene.add(lightHead);
 
     tick();
